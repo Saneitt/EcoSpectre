@@ -1,6 +1,10 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "expo-camera": ["./node_modules/expo-camera/build/Camera.d.ts"]
+    }
   }
 }

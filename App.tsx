@@ -1,20 +1,34 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStackParamList } from './src/types/navigation';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+import { AuthScreen } from './src/screens/AuthScreen';
+import { MainScreen } from './src/screens/MainScreen';
+import { CameraScreen } from './src/screens/CameraScreen';
+import { ProcessingScreen } from './src/screens/ProcessingScreen';
+import { ResultScreen } from './src/screens/ResultScreen';
+import { SettingsScreen } from './src/screens/SettingsScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar style="dark" />
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Auth" component={AuthScreen} />
+        <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen name="Camera" component={CameraScreen} />
+        <Stack.Screen name="Processing" component={ProcessingScreen} />
+        <Stack.Screen name="Result" component={ResultScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
