@@ -6,7 +6,7 @@ import { api } from '../services/api';
 import { useAuth } from '../store/auth';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Auth'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'Signup'>;
 
 export const SignupScreen: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState('');

@@ -1,10 +1,9 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Alert, ActivityIndicator } from 'react-native';
-import { Camera, CameraType } from 'expo-camera';
+import Camera from 'expo-camera';
+import { CameraType } from 'expo-camera/build/Camera.types';
 
-const requestCameraPermissionsAsync = async () => {
-  return await Camera.requestCameraPermissionsAsync();
-};
+const requestCameraPermissionsAsync = () => Camera.requestCameraPermissionsAsync();
 import { manipulateAsync, SaveFormat } from 'expo-image-manipulator';
 import { useIsFocused } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';

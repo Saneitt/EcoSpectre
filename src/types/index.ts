@@ -61,12 +61,4 @@ export interface ApiError {
   status?: number;
 }
 
-// Navigation Types
-export type RootStackParamList = {
-  Auth: undefined;
-  Main: undefined;
-  Camera: undefined;
-  Processing: { imageUri: string };
-  Result: { scanRecord: ScanRecord };
-  Settings: undefined;
-};
+// Navigation Types are now in navigation.ts

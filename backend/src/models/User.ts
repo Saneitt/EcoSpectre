@@ -7,6 +7,8 @@ export interface IUser extends mongoose.Document {
   settings: {
     storeImages: boolean;
   };
+  createdAt: Date;
+  updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
 }
 

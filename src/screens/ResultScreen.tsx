@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types';
+import { RootStackParamList } from '../types/navigation';
 import { ResultCard } from '../components/ResultCard';
 import { useAuth } from '../store/auth';
 import { api } from '../services/api';
